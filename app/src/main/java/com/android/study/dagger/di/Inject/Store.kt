@@ -1,6 +1,7 @@
 package com.android.study.dagger.di.Inject
 
 import com.android.study.dagger.di.Component.DaggerFastFoodComponent
+import com.android.study.dagger.di.Module.BurgerModule
 
 class Store{
 
@@ -11,6 +12,16 @@ class Store{
 
 init {
     DaggerFastFoodComponent.builder()
+        .burgerModule(BurgerModule())
+        .build()
+        .inject(this)
+    DaggerFastFoodComponent.builder()
+        //BuggerModule의 객체를 컴포넌트에 전달한다.
+        .burgerModule(BurgerModule())
+        .build()
+
+        //FoodComponent로 부터 객체를 전달받는다.
+        .inject(store = this)
 }
 
 }

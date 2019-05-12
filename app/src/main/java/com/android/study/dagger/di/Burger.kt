@@ -16,4 +16,3 @@ class BeefPatty : Patty { }
 class WheatBun : Bun {}
 
 
-
